@@ -23,7 +23,7 @@ FOREIGN KEY (dept_id) REFERENCES Department(dept_id)
 CREATE TABLE Student(
 student_id SERIAL PRIMARY KEY,
 name VARCHAR(20),
-gpa Double Precision CHECK (gpa<=5 AND gpa >=0)
+gpa Double Precision CHECK (gpa<=4 AND gpa >=0)
 );
 
 CREATE TABLE Enrollment(
@@ -31,7 +31,7 @@ enrollment_id Serial Primary KEY,
 student_id INTEGER NOT NULL,
 course_id INTEGER NOT NULL,
 professor_id INTEGER NOT NULL,
-grade Double Precision CHECK (grade<=5 AND grade >=0),
+grade Double Precision CHECK (grade<=4 AND grade >=0),
 FOREIGN KEY (student_id) REFERENCES Student(student_id),
 FOREIGN KEY (course_id) REFERENCES Course(course_id),
 FOREIGN KEY (professor_id) REFERENCES Professor(prof_id)
